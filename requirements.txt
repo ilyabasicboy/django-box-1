@@ -13,14 +13,14 @@ django_tinymce==2.6.0
 dj-pagination==2.4.0
 django-modeladmin-reorder==0.3.1
 
-git+git://github.com/oldroute/django-catalog-tree@1.11
-git+git://github.com/oldroute/django-treemenus@1.11
-git+git://github.com/oldroute/django-simple-feedback.git@1.11
-git+git://github.com/oldroute/django-tinymce-attachment@1.11
-git+git://github.com/oldroute/django-nocaptcha-recaptcha.git
-git+git://github.com/oldroute/django-chunks.git@1.11
-git+git://github.com/oldroute/django-easy-news.git@1.11
-git+git://github.com/oldroute/django-seo.git@1.11
-git+git://github.com/oldroute/django-import-redirects@1.11
-git+git://github.com/oldroute/django-filebrowser-no-grappelli.git
-git+git://github.com/oldroute/django-page-cms@1.11
+git+git://github.com/redsolution/django-catalog-tree@1.11
+git+git://github.com/redsolution/django-treemenus@1.11
+git+git://github.com/redsolution/django-simple-feedback.git@1.11
+git+git://github.com/redsolution/django-tinymce-attachment@1.11
+git+git://github.com/redsolution/django-nocaptcha-recaptcha.git
+git+git://github.com/redsolution/django-chunks.git@1.11
+git+git://github.com/redsolution/django-easy-news.git@1.11
+git+git://github.com/redsolution/django-seo.git@1.11
+git+git://github.com/redsolution/django-import-redirects@1.11
+git+git://github.com/redsolution/django-filebrowser-no-grappelli.git
+git+git://github.com/redsolution/django-page-cms@1.11
