@@ -8,7 +8,7 @@ from {{ project_name }}.custom_news.models import NewsRoot
 from .models import ErrorPage
 
 
-def handler404(request):
+def handler404(request, exception=None):
     obj, _ = ErrorPage.objects.get_or_create(type='404')
     obj.generate_static_page(request)
     return render(request, 'service/404.html', {'object': obj}, status=404)

@@ -22,7 +22,7 @@ class Root(CatalogBase):
 
     last_modified = models.DateTimeField(auto_now=True)
 
-    def __unicode__(self, *args, **kwargs):
+    def __str__(self, *args, **kwargs):
         return u'Корневая страница'
 
     def get_absolute_url(self):
@@ -57,7 +57,7 @@ class Product(CatalogBase):
             role=settings.ROLE_GALLERY
         )
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
@@ -71,5 +71,5 @@ class Section(CatalogBase):
     main_content = HTMLField(verbose_name=u'основной контент', blank=True, null=True)
     bottom_content = HTMLField(verbose_name=u'контент в конце страницы', blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title

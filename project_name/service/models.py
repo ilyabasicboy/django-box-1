@@ -30,12 +30,12 @@ class ErrorPage(models.Model):
         context = {'object': self}
         rendered = render_to_string('service/base_%s.html' % self.type, context, request)
         file_dir = os.path.join(settings.PROJECT_ROOT, 'templates', 'service', '%s.html' % self.type)
-        file = open(file_dir, 'w+')
+        file = open(file_dir, 'wb')
         file.write(rendered.encode('utf-8'))
         file.close()
         return True
 
-    def __unicode__(self):
+    def __str__(self):
         return self.type
 
 
@@ -44,7 +44,7 @@ if settings.DEBUG:
     def get_absolute_url(self):
         return reverse('handler%s' % self.type)
 
-    ErrorPage.get_absolute_url = MethodType(get_absolute_url, None, ErrorPage)
+    ErrorPage.get_absolute_url = MethodType(get_absolute_url, ErrorPage)
 
 
 class SiteSettings(Site):
@@ -67,7 +67,7 @@ class SiteSettings(Site):
 
     def generate_robots_file(self   ):
         file_dir = os.path.join(settings.PROJECT_ROOT, 'templates', 'service', 'robots.txt')
-        file = open(file_dir, 'w+')
+        file = open(file_dir, 'wb')
         file.write(self.robots.encode('utf-8'))
         file.close()
         return True

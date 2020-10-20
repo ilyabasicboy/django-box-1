@@ -8,12 +8,6 @@ from .forms import ErrorPageAdminForm, SiteSettingsAdminForm
 @admin.register(ErrorPage)
 class ErrorPageAdmin(admin.ModelAdmin):
 
-    @property
-    def media(self):
-        media = super(ErrorPageAdmin, self).media
-        media.add_css({'all': ['css/admin/common.css']})
-        return media
-
     def has_delete_permission(self, request, obj=None):
         return False
 
@@ -28,12 +22,6 @@ class ErrorPageAdmin(admin.ModelAdmin):
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
-
-    @property
-    def media(self):
-        media = super(SiteSettingsAdmin, self).media
-        media.add_css({'all': ['css/admin/common.css']})
-        return media
 
     model = SiteSettings
     form = SiteSettingsAdminForm

@@ -24,7 +24,7 @@ def news_root_admin_link():
     return reverse('admin:custom_news_newsroot_change', args=[obj.id])
 
 
-@register.assignment_tag(takes_context=True)
+@register.simple_tag(takes_context=True)
 def get_admin_sidebar_models(context):
 
     """ Получить список ссылок для сайдбара в админке """

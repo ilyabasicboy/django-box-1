@@ -8,4 +8,4 @@ class CustomCatalogAppConfig(CustomCatalogBaseConfig):
 
     def ready(self):
         super(CustomCatalogAppConfig, self).ready()
-        from .signals import *
+        import {{ project_name }}.custom_catalog.signals

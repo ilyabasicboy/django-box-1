@@ -50,7 +50,7 @@ def get_ranged_pagination_pages(current, pages, count):
     return result
 
 
-@register.assignment_tag
+@register.simple_tag
 def get_custom_pagination(current, pages):
 
     """ Возвращает объект пагинации"""

@@ -8,12 +8,6 @@ from .forms import ProductAdminForm, SectionAdminForm, RootAdminForm
 @admin.register(Root)
 class RootAdmin(CatalogItemBaseAdmin):
 
-    @property
-    def media(self):
-        media = super(RootAdmin, self).media
-        media.add_css({'all': ['css/admin/common.css']})
-        return media
-
     def has_add_permission(self, request):
         return not bool(Root.objects.exists())
 
@@ -28,12 +22,6 @@ class RootAdmin(CatalogItemBaseAdmin):
 @admin.register(Product)
 class ProductAdmin(CatalogItemBaseAdmin):
 
-    @property
-    def media(self):
-        media = super(ProductAdmin, self).media
-        media.add_css({'all': ['css/admin/common.css']})
-        return media
-
     model = Product
     form = ProductAdminForm
     prepopulated_fields = {'slug': ('title',)}
@@ -43,12 +31,6 @@ class ProductAdmin(CatalogItemBaseAdmin):
 
 @admin.register(Section)
 class SectionAdmin(CatalogItemBaseAdmin):
-
-    @property
-    def media(self):
-        media = super(SectionAdmin, self).media
-        media.add_css({'all': ['css/admin/common.css']})
-        return media
 
     model = Section
     form = SectionAdminForm

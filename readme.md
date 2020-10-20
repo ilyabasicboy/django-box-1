@@ -1,8 +1,8 @@
 # Django 1.11 project template
 
 ##### Requrements:
- - Python 2.7
- - Django 1.11.* (+ psycopg2)
+ - Python 3.5
+ - Django 2.2.* (+ psycopg2)
  - PostgreSQL >= 9
  - Node.js >= 10.10
 
@@ -26,9 +26,9 @@ Create bash file "new_project.sh" in your projects directory with following cont
 project_name=$1
 git_url=
 #pip install Django==1.11.*
-django-admin startproject -e py,js,json,gitignore --template=https://github.com/redsolution/django-box-1/archive/master.zip $project_name
+django-admin startproject -e py,js,json,gitignore --template=https://github.com/shoker174/django-box-1/archive/master.zip $project_name
 cd $project_name
-virtualenv --system-site-packages venv
+python3 -m venv venv
 . venv/bin/activate
 pip install -r requirements.txt
 createdb $project_name

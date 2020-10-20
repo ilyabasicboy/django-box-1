@@ -23,7 +23,7 @@ class NewsRoot(models.Model):
 
         return News.objects.filter(show=True, date__lte=timezone.now())
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):

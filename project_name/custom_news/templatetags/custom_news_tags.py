@@ -31,7 +31,7 @@ def show_block_news(context):
     return context
 
 
-@register.assignment_tag()
+@register.simple_tag()
 def get_news_root():
 
     """ Возвращает корневую новостей """

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from django.conf.urls import url, include
+from django.conf.urls import url
+from django.urls import include, path
 from django.views.static import serve
 from django.conf import settings
 from django.contrib import admin
@@ -10,8 +11,8 @@ from filebrowser.sites import site
 urlpatterns = [
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     url(r'^', include('attachment.urls')),
-    url(r'^admin/filebrowser/', include(site.urls)),
-    url(r'^admin/', admin.site.urls),
+    path('admin/filebrowser/', site.urls),
+    path('admin/', admin.site.urls),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^feedback/', include('feedback.urls')),
     url(r'^news/', include('{{ project_name }}.custom_news.urls')),

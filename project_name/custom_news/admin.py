@@ -9,12 +9,6 @@ from .models import NewsRoot
 @admin.register(NewsRoot)
 class NewsRootAdmin(admin.ModelAdmin):
 
-    @property
-    def media(self):
-        media = super(NewsRootAdmin, self).media
-        media.add_css({'all': ['css/admin/common.css']})
-        return media
-
     model = NewsRoot
     form = NewsRootAdminForm
 
