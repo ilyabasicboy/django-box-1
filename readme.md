@@ -25,11 +25,14 @@ Create bash file "new_project.sh" in your projects directory with following cont
 #!/bin/bash
 project_name=$1
 git_url=
-#pip install Django==1.11.*
-django-admin startproject -e py,js,json,gitignore --template=https://github.com/shoker174/django-box-1/archive/master.zip $project_name
-cd $project_name
-python3 -m venv venv
-. venv/bin/activate
+#
+python3 -m venv $project_name/venv
+. $project_name/venv/bin/activate
+#pip install Django==2.2.*
+#pip install python-memcached
+#pip install psycopg2-binary==2.8.5
+cd project_name/
+django-admin startproject -e py,js,json,gitignore --template=https://github.com/shoker174/django-box-1/archive/master.zip $project_name .
 pip install -r requirements.txt
 createdb $project_name
 python init_settings.py

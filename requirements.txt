@@ -1,7 +1,7 @@
 # system wide packages
 # psycopg2==2.6.1
 
-django==2.2.15
+django==2.2.*
 six==1.10.0
 unidecode==1.1.0
 xlsxwriter==1.1.8
