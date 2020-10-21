@@ -13,14 +13,14 @@ dj-pagination==2.4.0
 django-modeladmin-reorder==0.3.1
 django-filebrowser-no-grappelli==3.8.0
 
-git+git://github.com/shoker174/django-catalog-tree
-git+git://github.com/shoker174/django-treemenus
-git+git://github.com/shoker174/django-simple-feedback.git
+git+git://github.com/shoker174/django-catalog-tree@2.2
+git+git://github.com/shoker174/django-treemenus@2.2
+git+git://github.com/shoker174/django-simple-feedback.git@2.2
 git+git://github.com/shoker174/django-imagekit@support/0.4.x
-git+git://github.com/shoker174/django-tinymce-attachment.git
+git+git://github.com/shoker174/django-tinymce-attachment.git@2.2
 git+git://github.com/redsolution/django-nocaptcha-recaptcha.git
-git+git://github.com/shoker174/django-chunks.git
-git+git://github.com/shoker174/django-easy-news.git
-git+git://github.com/shoker174/django-seo.git
-git+git://github.com/shoker174/django-import-redirects
+git+git://github.com/shoker174/django-chunks.git@2.2
+git+git://github.com/shoker174/django-easy-news.git@2.2
+git+git://github.com/shoker174/django-seo.git@2.2
+git+git://github.com/shoker174/django-import-redirects@2.2
 git+git://github.com/shoker174/django-page-cms@django-2.2
