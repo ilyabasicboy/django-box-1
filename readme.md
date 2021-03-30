@@ -1,4 +1,4 @@
-# Django 1.11 project template
+# Django 2.2 project template
 
 ##### Requrements:
  - Python 3.5
