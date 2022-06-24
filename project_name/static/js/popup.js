@@ -1,57 +1,63 @@
-$('.mfp-open').magnificPopup({
-    callbacks: {
+$(function () {
+
+    //Form Modal
+    $('.modal-open').each(function() {
+        $(this).magnificPopup({
+            type: "inline",
+            removalDelay: 500,
+            mainClass: 'mfp-move',
+            callbacks: {
+                open: function () {
+                    $("body").addClass("noscroll");
+                },
+                close: function () {
+                    $("body").removeClass("noscroll");
+                },
+            },
+        });
+    });
+
+    //Gallery Modal
+    $('.mfp-gallery').each(function() {
+        $(this).magnificPopup({
+            type: 'image',
+            removalDelay: 500,
+            mainClass: 'mfp-fade',
+            image: {
+                cursor: null,
+                tClose: 'Закрыть',
+                titleSrc: function(item) {
+                    return item.img.attr('alt');
+                }
+            },
+            gallery: {
+                enabled: true,
+                preload: [0, 2],
+                navigateByImgClick: true,
+                tPrev: 'Предыдущее фото',
+                tNext: 'Следующее фото'
+            },
+            delegate: 'a[href$=".png"][target!="_blank"], \
+                           a[href$=".PNG"][target!="_blank"], \
+                           a[href$=".jpeg"][target!="_blank"], \
+                           a[href$=".JPEG"][target!="_blank"], \
+                           a[href$=".jpg"][target!="_blank"], \
+                           a[href$=".JPG"][target!="_blank"]',
+            callbacks: {
+                buildControls: function() {
+                    if (this.items.length > 1) {
+                        this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
+                    }
+                },
                 open: function() {
-                    $('html').addClass('mfp-feedback mfp-opened');
-                    $('body').addClass('noscroll')
+                    $("body").addClass("noscroll");
                 },
                 close: function() {
-                    $('html').removeClass('mfp-feedback mfp-opened');
-                    $('body').removeClass('noscroll')
+                    $("body").removeClass("noscroll");
                 }
             },
-     });     
-
-
-
-
-//Фотогалерея
-$('.mfp-gallery').each(function() {
-    $(this).magnificPopup({
-        type: 'image',
-        image: {
-            cursor: null,
-            tClose: 'Закрыть',
-            titleSrc: function(item) {
-                return item.img.attr('alt');
-            }
-        },
-        gallery: {
-            enabled: true,
-            preload: [0, 2],
-            navigateByImgClick: true,
-            tPrev: 'Предыдущее фото',
-            tNext: 'Следующее фото'
-        },
-        delegate: 'a[href$=".png"][target!="_blank"], \
-					   a[href$=".PNG"][target!="_blank"], \
-					   a[href$=".jpeg"][target!="_blank"], \
-					   a[href$=".JPEG"][target!="_blank"], \
-					   a[href$=".jpg"][target!="_blank"], \
-					   a[href$=".JPG"][target!="_blank"]',
-        callbacks: {
-            buildControls: function() {
-                if (this.items.length > 1) {
-                    this.contentContainer.append(this.arrowLeft.add(this.arrowRight));
-                }
-            },
-            open: function() {
-                $('html').addClass('mfp-opened');
-            },
-            close: function() {
-                $('html').removeClass('mfp-opened');
-            }
-        },
-        closeMarkup: '<button title="Закрыть (ESC)" type="button" class="mfp-close"></button>',
+            closeMarkup: '<button title="Закрыть" type="button" class="mfp-close"></button>',
+        });
     });
-});
 
+});

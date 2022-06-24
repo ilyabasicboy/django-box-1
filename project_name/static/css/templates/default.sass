@@ -1,0 +1,53 @@
+*, :after, :before
+	box-sizing: border-box
+
+body
+	font-family: 'Arial', sans-serif
+	font-weight: 400
+	line-height: 1.5
+	font-size: 14px
+	overflow-x: hidden
+
+body.fix-anim *
+    transition: none
+
+h1, h2, h3, h4, h5, h6
+	font-weight: 600
+
+a
+	text-decoration: none
+	outline: none
+	&:focus
+	    outline: none!important
+
+img
+	max-width: 100%
+	height: auto
+
+.container
+	max-width: 1250px
+	width: 100%
+	margin: 0 auto
+	padding: 0 15px
+	position: relative
+	@media screen and (max-width: $sm-max)
+	    padding: 0 10px
+
+.section-default
+	padding: 95px 0
+	@media screen and (max-width: $sm-max)
+	    padding: 60px 0
+	@media screen and (max-width: $xs-max)
+	    padding: 36px 0
+
+.section-default--top
+    padding-top: 0
+
+.section-default--bottom
+    padding-bottom: 0
+
+.page
+	overflow: hidden
+
+.noscroll
+	overflow: hidden

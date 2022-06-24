@@ -86,7 +86,19 @@ let conf = {
 						}
 					}
 				]
-            }
+            },
+            //fonts
+            {
+                test: /\.(eot|ttf|woff|woff2)$/,
+                use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '../fonts/[name].[ext]'
+						}
+					}
+				]
+            },
         ],
     },
     plugins: [
@@ -94,7 +106,6 @@ let conf = {
             $: "jquery",
             jQuery: "jquery",
             'window.jQuery': 'jquery'
-
         }),
         new MiniCssExtractPlugin({
             filename: "[name].[hash].css",
@@ -130,7 +141,12 @@ let conf = {
                 ],
             }]
         })
-    ]
+    ],
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    }
 };
 
 module.exports = (env, options) => {

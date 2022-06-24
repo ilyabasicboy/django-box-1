@@ -9,13 +9,13 @@
 
     <h3>{{ form.title }} </h3>
 
-    <div class="form__row form__group" >
-        <div class="form__col">
+    <div>
+        <div>
             {% for field in form %}
                 {% show_field field set 1 %}
             {% endfor %}
         </div>
-        <div class="form__col">
+        <div>
             {% for field in form %}
                 {% show_field field set 2 %}
             {% endfor %}
@@ -24,8 +24,9 @@
 
         </div>
     </div>
-    <div class="form__row form__submit">
-        <span class="form__privacy">{{ chunks.privacy_policy.content }}</span>
+
+    <div>
+        <div>{{ chunks.privacy_policy.content }}</div>
         <input type="submit" class="btn" value="Отправить"/>
     </div>
 

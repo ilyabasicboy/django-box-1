@@ -1,13 +1,12 @@
+import './css/vendor/reset.css'
+import './css/vendor/magnific-popup.css'
+import 'swiper/swiper-bundle.css'
+
 import './css/style.sass'
 
-import 'slick-carousel'
 import 'jquery.maskedinput/src/jquery.maskedinput'
-import 'magnific-popup/dist/jquery.magnific-popup'
-import 'magnific-popup/dist/magnific-popup.css'
-
-
+import './js/vendor//jquery.magnific-popup.js'
 import './js/base'
+import './js/slider'
 import './js/feedback'
 import './js/popup'
-import './js/callbacks'
-import './js/listeners'
