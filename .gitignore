@@ -16,6 +16,7 @@
 /node_modules/*
 .sublime-gulp.cache
 /media.tar
+package-lock.json
 /{{ project_name }}/settings.py
 /{{ project_name }}/templates/service/500.html
 /{{ project_name }}/templates/service/404.html
