@@ -2,12 +2,16 @@
 {% load base_tags %}
 
 {% block breadcrumbs %}
-    <a class="breadcrumbs__item" href="/">
-        Главная
-    </a>
-    <span class="breadcrumbs__item">
-        /
-    </span>
+    <li class="breadcrumbs__item">
+        <a class="breadcrumbs__content" href="/">
+            <span>
+                Главная
+            </span>
+        </a>
+        <span class="breadcrumbs__content">
+            /
+        </span>
+    </li>
 {% endblock %}
 
 {% block content %}

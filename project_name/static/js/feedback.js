@@ -1,5 +1,5 @@
 //Feedback Form
-let  feedback = {
+let feedback = {
     submit: function($form) {
         let formURL = $form.attr('action');
         let data = new FormData();

@@ -9,6 +9,7 @@
 
         <meta name="theme-color" class="theme-color" content="#fff">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="format-detection" content="telephone=no">
         <meta charset="utf-8">
 
         {% if request.GET.page > 1 %}
@@ -25,76 +26,68 @@
     </head>
 
     {% block body %}
-    <body class="body fix-anim">
-        {{ chunks.top_of_body.content }}
+        <body class="body fix-anim">
+            {{ chunks.top_of_body.content }}
 
-        <header class="header">
-            <div class="container">
-                {% block header_menu %}
-                    {% show_menu 'header_menu' %}
-                {% endblock %}
-            </div>
-        </header>
-
-        <main class="page">
-            {% block breadcrumbs_section %}
-            <section class="section-breadcrumbs">
+            <header class="header">
                 <div class="container">
-                    <div class="scroll-custom-x-shadow--xs">
-                        <div class="breadcrumbs scroll-custom-x-hidden--xs">
-                            {% block breadcrumbs %}
-                            <a class="breadcrumbs__item" href="/">
-                                Главная
-                            </a>
-                            <span class="breadcrumbs__item">
-                                /
-                            </span>
-                            {% endblock %}
+                    {% block header_menu %}
+                        {% show_menu 'header_menu' %}
+                    {% endblock %}
+                </div>
+            </header>
+
+            <main class="page">
+                {% block breadcrumbs_section %}
+                    <section class="section-breadcrumbs">
+                        <div class="container">
+                            <ul class="breadcrumbs scroll-custom-x-hidden--xs">
+                                {% block breadcrumbs %}
+                                    <li class="breadcrumbs__item">
+                                        <a class="breadcrumbs__content" href="/">
+                                            <span>
+                                                Главная
+                                            </span>
+                                        </a>
+                                        <span class="breadcrumbs__content">
+                                            /
+                                        </span>
+                                    </li>
+                                {% endblock %}
+                            </ul>
                         </div>
-                    </div>
-                </div>
-            </section>
-            {% endblock %}
+                    </section>
+                {% endblock %}
 
-            {% block title_section %}
-            <section class="section-title">
+                {% block title_section %}
+                    <section class="section-title">
+                        <div class="container">
+                            <div class="title-content">
+                                <h1 class="title">
+                                    {% block content_title %}
+                                        {{ object.title|default:"" }}
+                                    {% endblock %}
+                                </h1>
+                            </div>
+                        </div>
+                    </section>
+                {% endblock %}
+
+                {% block content %}{% endblock %}
+            </main>
+
+            <footer class="footer">
                 <div class="container">
-                    <div class="title-content">
-                        <h1 class="title">
-                            {% block content_title %}
-                                {{ object.title|default:"" }}
-                            {% endblock %}
-                        </h1>
-                    </div>
+                    {% show_menu 'footer_menu' %}
                 </div>
-            </section>
+            </footer>
+
+            {% block js %}
+                <script src="{% static 'bundle/bundle.c57861ec54a04650e357.js' %}"></script>
             {% endblock %}
 
-            {% block content %}{% endblock %}
-        </main>
-
-        <footer class="footer">
-            <div class="container">
-                {% show_menu 'footer_menu' %}
-
-                <div class="footer__developer">
-                    <img src="{% static 'img/redmedia.svg' %}" alt="redmedia">
-                    <span>
-                        Сделано в
-                        <a href="https://www.redmediaonline.ru/" title="Создание сайта" target="_blank">
-                            Redmedia
-                        </a>
-                    </span>
-                </div>
-            </div>
-        </footer>
-
-        {% block js %}
-            <script src="{% static 'bundle/bundle.c57861ec54a04650e357.js' %}"></script>
-        {% endblock %}
-
-        {{ chunks.end_of_body.content }}
-    </body>
+            {{ chunks.end_of_body.content }}
+        </body>
     {% endblock body %}
 </html>
 {% end_smart_spaceless %}

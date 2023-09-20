@@ -40,8 +40,3 @@
     {% show_block_content object.main_content %}
 
 {% endblock %}
-
-{% block js %}
-    {{ block.super }}
-    <script>window.dispatchEvent(new Event('pageProductLoaded'))</script>
-{% endblock js %}

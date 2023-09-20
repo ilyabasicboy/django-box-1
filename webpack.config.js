@@ -13,7 +13,6 @@ const FileManagerPlugin = require('filemanager-webpack-plugin');
 let conf = {
     entry: {
         bundle: './{{ project_name }}/static/index.js',
-        critical: './{{ project_name }}/static/critical.js',
     },
     output: {
         path: path.join(__dirname, './{{ project_name }}/static/bundle/'),
@@ -110,10 +109,6 @@ let conf = {
         new MiniCssExtractPlugin({
             filename: "[name].[hash].css",
         }),
-        new RenameWebpackPlugin({
-            originNameReg: /critical.*.css/,
-            targetName: 'critical.css'
-        }),
         new ReplaceHashInFileWebpackPlugin([{
             dir: './{{ project_name }}/templates',
             files: ['base.html'],
@@ -132,14 +127,6 @@ let conf = {
                  './{{ project_name }}/static/bundle/'
                 ],
             }],
-            onEnd: [{
-                delete: [
-                 './{{ project_name }}/static/bundle/critical.*.js'
-                ],
-                move: [
-                    { source: './{{ project_name }}/static/bundle/critical.css', destination: './{{ project_name }}/templates/parts/critical.css' },
-                ],
-            }]
         })
     ],
     performance: {
@@ -152,7 +139,7 @@ let conf = {
 module.exports = (env, options) => {
     let production = options.mode === 'production';
 
-    conf.devtool = production 
+    conf.devtool = production
                     ? false
                     : false;
     return conf;

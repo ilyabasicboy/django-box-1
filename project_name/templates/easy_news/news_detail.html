@@ -4,12 +4,16 @@
 {% block breadcrumbs %}
     {% get_news_root as root %}
     {{ block.super }}
-    <a class="breadcrumbs__item" href="{% url 'news_root' %}">
-        {{ root.title }}
-    </a>
-    <span class="breadcrumbs__item">
-        /
-    </span>
+    <li class="breadcrumbs__item">
+        <a class="breadcrumbs__content" href="{% url 'news_root' %}">
+            <span>
+                {{ root.title }}
+            </span>
+        </a>
+        <span class="breadcrumbs__content">
+            /
+        </span>
+    </li>
 {% endblock %}
 
 {% block content %}
